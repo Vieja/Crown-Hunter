@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Crown Hunter</string>
-    <string name="menu_home">Głowna</string>
+    <string name="menu_home">Główna</string>
     <string name="menu_monsters">Potwory</string>
     <string name="menu_events">Wydarzenia</string>
 </resources>

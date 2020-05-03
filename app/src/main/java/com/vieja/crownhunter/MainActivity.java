@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(this);
+        navView.setItemIconTintList(null);
         loadFragment(new HomeFragment());
     }
 
