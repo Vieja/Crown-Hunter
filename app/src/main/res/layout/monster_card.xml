@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp">
+        
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="2dp"
+            android:id="@+id/monster_icon"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test1"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_toEndOf="@id/monster_icon"
+            android:layout_toRightOf="@id/monster_icon"
+            android:layout_alignParentTop="true"
+            android:id="@+id/test1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test2"
+            android:textSize="15sp"
+            android:layout_toEndOf="@id/monster_icon"
+            android:layout_below="@id/test1"
+            android:layout_toRightOf="@id/monster_icon"
+            android:id="@+id/test2"
+            android:layout_margin="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

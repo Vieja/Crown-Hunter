@@ -8,12 +8,46 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class MonstersFragment extends Fragment {
+
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_monsters, null);
+        View view = inflater.inflate(R.layout.fragment_monsters, null);
+
+        ArrayList<MonsterCard> monsterCardsList = new ArrayList<>();
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos,"Rathalos","hfd"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White","hfd"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White","hfd"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos,"Rathalos","hfd"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White","hfd"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White","hfd"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos,"Rathalos","hfd"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White","hfd"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White","hfd"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos,"Rathalos","hfd"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White","hfd"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White","hfd"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos,"Rathalos","hfd"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White","hfd"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White","hfd"));
+
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(getActivity());
+        adapter = new MonsterListAdapter(monsterCardsList);
+
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
+        return view;
     }
 }
