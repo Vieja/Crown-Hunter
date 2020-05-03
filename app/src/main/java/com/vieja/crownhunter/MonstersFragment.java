@@ -25,22 +25,22 @@ public class MonstersFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_monsters, null);
 
         ArrayList<MonsterCard> monsterCardsList = new ArrayList<>();
-        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos,"Rathalos","hfd"));
-        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White","hfd"));
-        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White","hfd"));
-        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos,"Rathalos","hfd"));
-        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White","hfd"));
-        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White","hfd"));
-        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos,"Rathalos","hfd"));
-        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White","hfd"));
-        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White","hfd"));
-        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos,"Rathalos","hfd"));
-        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White","hfd"));
-        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White","hfd"));
-        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos,"Rathalos","hfd"));
-        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White","hfd"));
-        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White","hfd"));
-
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos,"Rathalos"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos,"Rathalos"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos,"Rathalos"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos,"Rathalos"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos,"Rathalos"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos,"Rathalos"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos,"Rathalos"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos,"Rathalos"));
+        monsterCardsList.add(new MonsterCard(R.drawable.m_rathalos_white,"Rathalos White"));
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getActivity());

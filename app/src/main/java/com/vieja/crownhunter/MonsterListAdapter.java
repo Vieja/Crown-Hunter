@@ -24,7 +24,6 @@ public class MonsterListAdapter extends RecyclerView.Adapter<MonsterListAdapter.
             super(itemView);
             monster_icon = itemView.findViewById(R.id.monster_icon);
             text1 = itemView.findViewById(R.id.test1);
-            text2 = itemView.findViewById(R.id.test2);
         }
     }
 
@@ -45,7 +44,6 @@ public class MonsterListAdapter extends RecyclerView.Adapter<MonsterListAdapter.
         MonsterCard card = monsterList.get(position);
         holder.monster_icon.setImageResource(card.getMonsterIcon());
         holder.text1.setText(card.getText1());
-        holder.text2.setText(card.getText2());
     }
 
     @Override
