@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity
         implements BottomNavigationView.OnNavigationItemSelectedListener {
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,9 +28,6 @@ public class MainActivity extends AppCompatActivity
         navView.setOnNavigationItemSelectedListener(this);
         navView.setItemIconTintList(null);
         loadFragment(new HomeFragment());
-
-
-
 
     }
 
@@ -48,9 +44,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
         Fragment fragment = null;
-
         switch (item.getItemId()) {
             case R.id.navigation_home:
                 fragment = new HomeFragment();

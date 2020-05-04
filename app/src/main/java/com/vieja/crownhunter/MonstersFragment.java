@@ -40,9 +40,6 @@ public class MonstersFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getActivity());
         adapter = new MonsterListAdapter(monsterCardsList, getContext());
-        recyclerView.addItemDecoration(new VerticalSpaceItemDecoration(20));
-
-
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 

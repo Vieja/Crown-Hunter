@@ -37,7 +37,6 @@ public class MonsterListAdapter extends RecyclerView.Adapter<MonsterListAdapter.
 
         @Override
         public void onClick(View v) {
-            Log.v("aciu","testy");
             int adapterPosition = getAdapterPosition();
             monsterList.get(adapterPosition).setMiniature(mini.isChecked());
             monsterList.get(adapterPosition).setGiant(giant.isChecked());

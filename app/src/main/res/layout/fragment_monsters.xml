@@ -15,7 +15,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/giant_crown" />
+        app:srcCompat="@drawable/mini_crown" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
