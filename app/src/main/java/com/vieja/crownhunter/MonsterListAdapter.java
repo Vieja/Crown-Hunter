@@ -1,8 +1,11 @@
 package com.vieja.crownhunter;
 
+import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,37 +16,73 @@ import java.util.ArrayList;
 
 public class MonsterListAdapter extends RecyclerView.Adapter<MonsterListAdapter.ViewHolder> {
 
-    private ArrayList<MonsterCard> monsterList;
+    private Context context;
+    public static ArrayList<MonsterCard> monsterList;
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener{
         public ImageView monster_icon;
-        public TextView text1;
-        public TextView text2;
+        public TextView name;
+        public CheckBox mini;
+        public CheckBox giant;
+        public Context context;
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(View itemView, Context c) {
             super(itemView);
             monster_icon = itemView.findViewById(R.id.monster_icon);
-            text1 = itemView.findViewById(R.id.test1);
+            name = itemView.findViewById(R.id.name);
+            mini = itemView.findViewById(R.id.miniBox);
+            giant = itemView.findViewById(R.id.maxBox);
+            context = c;
+        }
+
+        @Override
+        public void onClick(View v) {
+            Log.v("aciu","testy");
+            int adapterPosition = getAdapterPosition();
+            monsterList.get(adapterPosition).setMiniature(mini.isChecked());
+            monsterList.get(adapterPosition).setGiant(giant.isChecked());
+            saveAnyChanges();
+
+        }
+
+        private void saveAnyChanges() {
+            StringBuilder save = new StringBuilder();
+            for (MonsterCard monster : monsterList){
+                save.append(monster.getName()+";")
+                        .append( (monster.isMiniature()) ? "yes;" : "no;" )
+                        .append( (monster.isGiant()) ? "yes;" : "no;" )
+                        .append("\n");
+            }
+            FileIO.save(context,save);
+        }
+
+        public void bind(int position) {
+            mini.setOnClickListener(this);
+            giant.setOnClickListener(this);
+            MonsterCard card = monsterList.get(position);
+            monster_icon.setImageResource(card.getMonsterIcon());
+            name.setText(card.getName());
+            mini.setChecked(card.isMiniature());
+            giant.setChecked(card.isGiant());
         }
     }
 
-    public MonsterListAdapter(ArrayList<MonsterCard> monsterList) {
-        this.monsterList = monsterList;
+    public MonsterListAdapter(ArrayList<MonsterCard> monsterList, Context context) {
+        this.context = context;
+        MonsterListAdapter.monsterList = monsterList;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.monster_card, parent, false);
-        ViewHolder vh = new ViewHolder(v);
+        ViewHolder vh = new ViewHolder(v, context);
         return vh;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        MonsterCard card = monsterList.get(position);
-        holder.monster_icon.setImageResource(card.getMonsterIcon());
-        holder.text1.setText(card.getText1());
+        holder.bind(position);
     }
 
     @Override
