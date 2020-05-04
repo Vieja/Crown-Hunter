@@ -1,5 +1,7 @@
 package com.vieja.crownhunter;
 
+import android.bluetooth.le.ScanSettings;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -39,6 +41,20 @@ public class MonsterDatabase {
     public static int getMonsterIcon(String name) {
         for (MonsterInfo m : list) {
             if (m.getName().equals(name)) return m.getMonsterIcon();
+        }
+        return -1;
+    }
+
+    public static Achievement getMonsterType(String name) {
+        for (MonsterInfo m : list) {
+            if (m.getName().equals(name)) return m.getType();
+        }
+        return null;
+    }
+
+    public static int getMonsterPosition(String name) {
+        for (MonsterInfo m : list) {
+            if (m.getName().equals(name)) return m.getPosition();
         }
         return -1;
     }

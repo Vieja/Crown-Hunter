@@ -48,7 +48,8 @@ public class MonsterListAdapter extends RecyclerView.Adapter<MonsterListAdapter.
         private void saveAnyChanges() {
             StringBuilder save = new StringBuilder();
             for (MonsterCard monster : monsterList){
-                save.append(monster.getName()+";")
+                save.append(monster.getPosition()).append(";").
+                        append(monster.getName()).append(";")
                         .append( (monster.isMiniature()) ? "yes;" : "no;" )
                         .append( (monster.isGiant()) ? "yes;" : "no;" )
                         .append("\n");

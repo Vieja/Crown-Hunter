@@ -5,12 +5,14 @@ public class MonsterCard {
     private String name;
     private boolean miniature = false;
     private boolean giant = false;
+    private int position;
 
-    public MonsterCard(int monsterIcon, String name, boolean miniature, boolean giant) {
+    public MonsterCard(int monsterIcon, String name, boolean miniature, boolean giant, int position) {
         this.monsterIcon = monsterIcon;
         this.name = name;
         this.miniature = miniature;
         this.giant = giant;
+        this.position = position;
     }
 
     public int getMonsterIcon() {
@@ -35,5 +37,9 @@ public class MonsterCard {
 
     public void setGiant(boolean giant) {
         this.giant = giant;
+    }
+
+    public int getPosition() {
+        return position;
     }
 }

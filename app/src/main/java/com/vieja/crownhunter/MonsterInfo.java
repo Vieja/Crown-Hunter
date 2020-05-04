@@ -24,4 +24,8 @@ public class MonsterInfo {
     public Achievement getType() {
         return type;
     }
+
+    public int getPosition() {
+        return position;
+    }
 }
