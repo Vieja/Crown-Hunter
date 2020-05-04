@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.Switch;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,6 +26,8 @@ public class MonstersFragment extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     ArrayList<MonsterCard> monsterCardsList = new ArrayList<>();
 
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -35,8 +38,22 @@ public class MonstersFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getActivity());
         adapter = new MonsterListAdapter(monsterCardsList, getContext());
+        recyclerView.addItemDecoration(new VerticalSpaceItemDecoration(20));
+
+
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+
+        Switch hide = view.findViewById(R.id.hide);
+        hide.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                monsterCardsList.get(0).setMiniature(true);
+                adapter.notifyDataSetChanged();
+            }
+        });
 
         return view;
     }
