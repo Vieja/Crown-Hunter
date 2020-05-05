@@ -27,7 +27,6 @@ public class MonstersFragment extends Fragment {
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     ArrayList<MonsterCard> monsterCardsList = new ArrayList<>();
-    ArrayList<MonsterCard> hiddenMonsterCardsList = new ArrayList<>();
 
 
     @Nullable
@@ -53,18 +52,19 @@ public class MonstersFragment extends Fragment {
                 if (hide.isChecked()) {
                     for (MonsterCard m : monsterCardsList) {
                         if (m.isMiniature() && m.isGiant()){
-                            hiddenMonsterCardsList.add(m);
+                            MonsterListAdapter.hiddenMonsterCardsList.add(m);
                             adapter.notifyItemRemoved(m.getPosition()-i);
                             i++;
                         }
                     }
-                    monsterCardsList.removeAll(hiddenMonsterCardsList);
+                    monsterCardsList.removeAll(MonsterListAdapter.hiddenMonsterCardsList);
                 } else {
-                    for (MonsterCard m : hiddenMonsterCardsList) {
+                    for (MonsterCard m : MonsterListAdapter.hiddenMonsterCardsList) {
+                        Log.v("lista",m.getName());
                         monsterCardsList.add(m.getPosition(),m);
                         adapter.notifyItemInserted(m.getPosition());
                     }
-                    hiddenMonsterCardsList.clear();
+                    MonsterListAdapter.hiddenMonsterCardsList.clear();
                 }
             }
         });
@@ -90,11 +90,7 @@ public class MonstersFragment extends Fragment {
                     monsterCardsList.add(new MonsterCard(icon, info[1], (info[2].equals("yes")), (info[3].equals("yes")), Integer.parseInt(info[0])));
                 }
             }
-            Collections.sort(monsterCardsList, new Comparator<MonsterCard>(){
-                public int compare(MonsterCard m1, MonsterCard m2) {
-                    return m1.getPosition() - m2.getPosition();
-                }
-            });
         }
+        MonsterListAdapter.hiddenMonsterCardsList.clear();
     }
 }

@@ -13,11 +13,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class MonsterListAdapter extends RecyclerView.Adapter<MonsterListAdapter.ViewHolder> {
 
     private Context context;
     public static ArrayList<MonsterCard> monsterList;
+    public static ArrayList<MonsterCard> hiddenMonsterCardsList = new ArrayList<>();
 
     public static class ViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener{
         public ImageView monster_icon;
@@ -45,8 +48,15 @@ public class MonsterListAdapter extends RecyclerView.Adapter<MonsterListAdapter.
         }
 
         private void saveAnyChanges() {
+            ArrayList<MonsterCard> toSave = new ArrayList<>(monsterList);
+            toSave.addAll(hiddenMonsterCardsList);
+            Collections.sort(toSave, new Comparator<MonsterCard>(){
+                public int compare(MonsterCard m1, MonsterCard m2) {
+                    return m1.getPosition() - m2.getPosition();
+                }
+            });
             StringBuilder save = new StringBuilder();
-            for (MonsterCard monster : monsterList){
+            for (MonsterCard monster : toSave){
                 save.append(monster.getPosition()).append(";").
                         append(monster.getName()).append(";")
                         .append( (monster.isMiniature()) ? "yes;" : "no;" )

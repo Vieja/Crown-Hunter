@@ -5,4 +5,5 @@
     <string name="menu_monsters">Potwory</string>
     <string name="menu_events">Wydarzenia</string>
     <string name="monster_hide">Ukryj ukończone</string>
+    <string name="settings">Ustawienia</string>
 </resources>
