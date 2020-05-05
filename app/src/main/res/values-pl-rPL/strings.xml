@@ -6,4 +6,15 @@
     <string name="menu_events">Wydarzenia</string>
     <string name="monster_hide">Ukryj ukończone</string>
     <string name="settings">Ustawienia</string>
+    <string name="s_head1">Lista potworów</string>
+    <string name="s_q1">Ukryj dodatek Iceborne</string>
+    <string name="s_q1_summ">Nie posiadam jeszcze Iceborne, nie chcę spoilerów!</string>
+    <string name="s_q2">Ukryj nieobowiązkowe korony</string>
+    <string name="s_q2_summ">Ukryj potwory które zostały dodane po premierze i nie są wymagane dla osiągnięć</string>
+    <string name="s_q3">Ustaw domyślne filtrowanie listy</string>
+    <string name="s_q3_summ_on">Na starcie ukrywaj ukończone potwory</string>
+    <string name="s_q3_summ_off">Na starcie pokazuj pełną listę potworów</string>
+    <string name="s_head2">Właściwości aplikacji</string>
+    <string name="s_q4">Pokaż nazwy potworów po angielsku</string>
+    <string name="s_q4_summ">Wymagany restart aplikacji</string>
 </resources>
