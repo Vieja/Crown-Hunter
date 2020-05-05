@@ -1,6 +1,8 @@
-package com.vieja.crownhunter;
+package com.vieja.crownhunter.activity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.SharedMemory;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +14,16 @@ import android.widget.Switch;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.vieja.crownhunter.FileIO;
+import com.vieja.crownhunter.MonsterCard;
+import com.vieja.crownhunter.MonsterDatabase;
+import com.vieja.crownhunter.MonsterInfo;
+import com.vieja.crownhunter.MonsterListAdapter;
+import com.vieja.crownhunter.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,8 +36,9 @@ public class MonstersFragment extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
-    ArrayList<MonsterCard> monsterCardsList = new ArrayList<>();
 
+    SharedPreferences prefs;
+    ArrayList<MonsterCard> monsterCardsList = new ArrayList<>();
 
     @Nullable
     @Override
@@ -41,6 +52,8 @@ public class MonstersFragment extends Fragment {
         adapter = new MonsterListAdapter(monsterCardsList, getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+
+        prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
 
         final Switch hide = view.findViewById(R.id.hide);
         hide.setOnClickListener(new View.OnClickListener()

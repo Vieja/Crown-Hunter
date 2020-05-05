@@ -1,4 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:title="@string/s_head1"
+        app:iconSpaceReserved="false">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="hide_iceborne"
+            android:title="@string/s_q1"
+            app:iconSpaceReserved="false"
+            android:summary="@string/s_q1_summ"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="hide_optional"
+            app:iconSpaceReserved="false"
+            android:title="@string/s_q2"
+            android:summary="@string/s_q2_summ"/>
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="switch_hide_finished"
+            app:iconSpaceReserved="false"
+            android:summaryOff="@string/s_q3_summ_off"
+            android:summaryOn="@string/s_q3_summ_on"
+            android:title="@string/s_q3" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/s_head2"
+        app:iconSpaceReserved="false">
 
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="names_english"
+            app:iconSpaceReserved="false"
+            android:title="@string/s_q4"
+            android:summary="@string/s_q4_summ"/>
+    </PreferenceCategory>
 </PreferenceScreen>

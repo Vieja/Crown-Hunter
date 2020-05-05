@@ -1,22 +1,19 @@
-package com.vieja.crownhunter;
+package com.vieja.crownhunter.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.vieja.crownhunter.R;
+import com.vieja.crownhunter.activity.EventsFragment;
+import com.vieja.crownhunter.activity.HomeFragment;
+import com.vieja.crownhunter.activity.MonstersFragment;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity
@@ -29,7 +26,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         ActionBar actionbar = getSupportActionBar();
-
+        //actionbar.setDisplayHomeAsUpEnabled(true);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(this);
@@ -57,11 +54,13 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Fragment fragment = null;
         switch (item.getItemId()) {
             case R.id.settings:
+                fragment = new SettingsFragment();
                 break;
         }
-        return super.onOptionsItemSelected(item);
+        return loadFragment(fragment);
     }
 
     @Override

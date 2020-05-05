@@ -5,4 +5,15 @@
     <string name="menu_events">Events</string>
     <string name="monster_hide">Hide finished</string>
     <string name="settings">Settings</string>
+    <string name="s_head1">Monsters List</string>
+    <string name="s_q1">Hide Iceborne Expansion</string>
+    <string name="s_q1_summ">I don\'t have Iceborne yet, spare me the spoilers!</string>
+    <string name="s_q2">Hide non-obligatory crowns</string>
+    <string name="s_q2_summ">Hide monsters that were added after release and aren\'t needed for any achievements</string>
+    <string name="s_q3">Set default list filtering</string>
+    <string name="s_q3_summ_on">Hide finished monsters on start</string>
+    <string name="s_q3_summ_off">Show full list on start</string>
+    <string name="s_head2">App performance</string>
+    <string name="s_q4">Show monsters\' names in English</string>
+    <string name="s_q4_summ">Restart needed to apply changes</string>
 </resources>
