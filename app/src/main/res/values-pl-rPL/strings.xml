@@ -10,7 +10,7 @@
     <string name="s_q1">Ukryj dodatek Iceborne</string>
     <string name="s_q1_summ">Nie posiadam jeszcze Iceborne, nie chcę spoilerów!</string>
     <string name="s_q2">Ukryj nieobowiązkowe korony</string>
-    <string name="s_q2_summ">Ukryj potwory, które zostały dodane po premierze Iceborne i nie są wymagane dla osiągnięć</string>
+    <string name="s_q2_summ">Ukryj potwory, które zostały dodane po premierze i nie są wymagane dla osiągnięć</string>
     <string name="s_q3">Ustaw domyślne filtrowanie listy</string>
     <string name="s_q3_summ_on">Na starcie ukrywaj ukończone potwory</string>
     <string name="s_q3_summ_off">Na starcie pokazuj pełną listę potworów</string>

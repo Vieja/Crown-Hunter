@@ -21,6 +21,7 @@ public class MonsterListAdapter extends RecyclerView.Adapter<MonsterListAdapter.
     private Context context;
     public static ArrayList<MonsterCard> monsterList;
     public static ArrayList<MonsterCard> hiddenMonsterCardsList = new ArrayList<>();
+    public static ArrayList<MonsterCard> filteredMonsterCardsList = new ArrayList<>();
 
     public static class ViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener{
         public ImageView monster_icon;
@@ -50,6 +51,7 @@ public class MonsterListAdapter extends RecyclerView.Adapter<MonsterListAdapter.
         private void saveAnyChanges() {
             ArrayList<MonsterCard> toSave = new ArrayList<>(monsterList);
             toSave.addAll(hiddenMonsterCardsList);
+            toSave.addAll(filteredMonsterCardsList);
             Collections.sort(toSave, new Comparator<MonsterCard>(){
                 public int compare(MonsterCard m1, MonsterCard m2) {
                     return m1.getPosition() - m2.getPosition();

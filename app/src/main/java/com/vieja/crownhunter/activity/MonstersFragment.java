@@ -74,7 +74,6 @@ public class MonstersFragment extends Fragment {
                     monsterCardsList.removeAll(MonsterListAdapter.hiddenMonsterCardsList);
                 } else {
                     for (MonsterCard m : MonsterListAdapter.hiddenMonsterCardsList) {
-                        Log.v("lista",m.getName());
                         monsterCardsList.add(m.getPosition(),m);
                         adapter.notifyItemInserted(m.getPosition());
                     }
@@ -93,18 +92,22 @@ public class MonstersFragment extends Fragment {
     }
 
     public void populateMonsterCardsList() {
+        MonsterListAdapter.hiddenMonsterCardsList.clear();
+        MonsterListAdapter.filteredMonsterCardsList.clear();
+
         boolean hide_iceborne = prefs.getBoolean("hide_iceborne",false);
         boolean hide_optional = prefs.getBoolean("hide_optional",false);
-
 
         StringBuilder sb = FileIO.load(getContext());
         if (sb.toString().equals("NO_FILE")) {
             StringBuilder save = new StringBuilder();
             for (MonsterInfo monster : MonsterDatabase.list){
                 save.append(monster.getPosition()).append(";").append(monster.getName()).append(";").append("no;no;\n");
-                if ( !hide_iceborne || (hide_iceborne && ( monster.getType() == Achievement.WORLD || monster.getType() == Achievement.WORLD_ADD ) ) )
-                    if ( !hide_optional || (hide_optional && hide_iceborne && monster.getType() != Achievement.WORLD_ADD) || (hide_optional && !hide_iceborne && monster.getType() != Achievement.ICEBORNE_ADD))
-                    monsterCardsList.add(new MonsterCard(monster.getMonsterIcon(), monster.getName(),false,false, monster.getPosition()));
+                if ( !hide_iceborne || (hide_iceborne && ( monster.getType() == Achievement.WORLD || monster.getType() == Achievement.WORLD_ADD ) ) ) {
+                    if (!hide_optional || (hide_optional && hide_iceborne && monster.getType() != Achievement.WORLD_ADD) || (hide_optional && !hide_iceborne && monster.getType() != Achievement.ICEBORNE_ADD)) {
+                        monsterCardsList.add(new MonsterCard(monster.getMonsterIcon(), monster.getName(), false, false, monster.getPosition()));
+                    } else MonsterListAdapter.filteredMonsterCardsList.add(new MonsterCard(monster.getMonsterIcon(), monster.getName(), false, false, monster.getPosition()));
+                } else MonsterListAdapter.filteredMonsterCardsList.add(new MonsterCard(monster.getMonsterIcon(), monster.getName(), false, false, monster.getPosition()));
             }
             FileIO.save(getContext(),save);
         } else {
@@ -113,12 +116,12 @@ public class MonstersFragment extends Fragment {
                 String[] info = line.split(";");
                 int icon = MonsterDatabase.getMonsterIcon(info[1]);
                 Achievement type = MonsterDatabase.getMonsterType(info[1]);
-                if ( !hide_iceborne || (hide_iceborne && ( type == Achievement.WORLD || type == Achievement.WORLD_ADD ) ) )
-                    if ( !hide_optional || (hide_optional && hide_iceborne && type != Achievement.WORLD_ADD) || (hide_optional && !hide_iceborne && type != Achievement.ICEBORNE_ADD))
-                    monsterCardsList.add(new MonsterCard(icon, info[1], (info[2].equals("yes")), (info[3].equals("yes")), Integer.parseInt(info[0])));
-
+                if ( !hide_iceborne || (hide_iceborne && ( type == Achievement.WORLD || type == Achievement.WORLD_ADD ) ) ) {
+                    if (!hide_optional || (hide_optional && hide_iceborne && type != Achievement.WORLD_ADD) || (hide_optional && !hide_iceborne && type != Achievement.ICEBORNE_ADD)) {
+                        monsterCardsList.add(new MonsterCard(icon, info[1], (info[2].equals("yes")), (info[3].equals("yes")), Integer.parseInt(info[0])));
+                    } else MonsterListAdapter.filteredMonsterCardsList.add(new MonsterCard(icon, info[1], (info[2].equals("yes")), (info[3].equals("yes")), Integer.parseInt(info[0])));
+                } else MonsterListAdapter.filteredMonsterCardsList.add(new MonsterCard(icon, info[1], (info[2].equals("yes")), (info[3].equals("yes")), Integer.parseInt(info[0])));
             }
         }
-        MonsterListAdapter.hiddenMonsterCardsList.clear();
     }
 }

@@ -5,6 +5,7 @@
     <string name="menu_events">Events</string>
     <string name="monster_hide">Hide finished</string>
     <string name="settings">Settings</string>
+
     <string name="s_head1">Monsters List</string>
     <string name="s_q1">Hide Iceborne Expansion</string>
     <string name="s_q1_summ">I don\'t have Iceborne yet, spare me the spoilers!</string>
@@ -16,4 +17,7 @@
     <string name="s_head2">App performance</string>
     <string name="s_q4">Show monsters\' names in English</string>
     <string name="s_q4_summ">Restart needed to apply changes</string>
+
+    <string name="home_nav1">Your progress</string>
+    <string name="home_nav2">Recommended event for you</string>
 </resources>
