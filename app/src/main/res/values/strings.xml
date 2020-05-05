@@ -20,4 +20,11 @@
 
     <string name="home_nav1">Your progress</string>
     <string name="home_nav2">Recommended event for you</string>
+    <string name="world">World</string>
+    <string name="iceborne">Iceborne</string>
+
+    <string name="home_mini_1"></string>
+    <string name="home_mini_2"> miniature crowns left</string>
+    <string name="home_giant_1"></string>
+    <string name="home_giant_2">giant crowns</string>
 </resources>
