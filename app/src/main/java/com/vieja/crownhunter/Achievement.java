@@ -1,5 +1,5 @@
 package com.vieja.crownhunter;
 
 public enum Achievement {
-    WORLD, ICEBORNE, ADDITIONAL
+    WORLD, WORLD_ADD, ICEBORNE, ICEBORNE_ADD
 }

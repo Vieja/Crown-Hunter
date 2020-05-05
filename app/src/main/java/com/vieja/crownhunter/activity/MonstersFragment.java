@@ -18,6 +18,7 @@ import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.vieja.crownhunter.Achievement;
 import com.vieja.crownhunter.FileIO;
 import com.vieja.crownhunter.MonsterCard;
 import com.vieja.crownhunter.MonsterDatabase;
@@ -45,15 +46,15 @@ public class MonstersFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_monsters, null);
 
+        prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
         populateMonsterCardsList();
+
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getActivity());
         adapter = new MonsterListAdapter(monsterCardsList, getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
-
-        prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
 
         final Switch hide = view.findViewById(R.id.hide);
         hide.setOnClickListener(new View.OnClickListener()
@@ -82,16 +83,28 @@ public class MonstersFragment extends Fragment {
             }
         });
 
+        boolean hide_finished = prefs.getBoolean("switch_hide_finished",false);
+        if (hide_finished) {
+            hide.setChecked(true);
+            hide.callOnClick();
+        }
+
         return view;
     }
 
     public void populateMonsterCardsList() {
+        boolean hide_iceborne = prefs.getBoolean("hide_iceborne",false);
+        boolean hide_optional = prefs.getBoolean("hide_optional",false);
+
+
         StringBuilder sb = FileIO.load(getContext());
         if (sb.toString().equals("NO_FILE")) {
             StringBuilder save = new StringBuilder();
             for (MonsterInfo monster : MonsterDatabase.list){
                 save.append(monster.getPosition()).append(";").append(monster.getName()).append(";").append("no;no;\n");
-                monsterCardsList.add(new MonsterCard(monster.getMonsterIcon(), monster.getName(),false,false, monster.getPosition()));
+                if ( !hide_iceborne || (hide_iceborne && ( monster.getType() == Achievement.WORLD || monster.getType() == Achievement.WORLD_ADD ) ) )
+                    if ( !hide_optional || (hide_optional && hide_iceborne && monster.getType() != Achievement.WORLD_ADD) || (hide_optional && !hide_iceborne && monster.getType() != Achievement.ICEBORNE_ADD))
+                    monsterCardsList.add(new MonsterCard(monster.getMonsterIcon(), monster.getName(),false,false, monster.getPosition()));
             }
             FileIO.save(getContext(),save);
         } else {
@@ -99,9 +112,11 @@ public class MonstersFragment extends Fragment {
             for (String line: lines){
                 String[] info = line.split(";");
                 int icon = MonsterDatabase.getMonsterIcon(info[1]);
-                if (icon!= -1) {
+                Achievement type = MonsterDatabase.getMonsterType(info[1]);
+                if ( !hide_iceborne || (hide_iceborne && ( type == Achievement.WORLD || type == Achievement.WORLD_ADD ) ) )
+                    if ( !hide_optional || (hide_optional && hide_iceborne && type != Achievement.WORLD_ADD) || (hide_optional && !hide_iceborne && type != Achievement.ICEBORNE_ADD))
                     monsterCardsList.add(new MonsterCard(icon, info[1], (info[2].equals("yes")), (info[3].equals("yes")), Integer.parseInt(info[0])));
-                }
+
             }
         }
         MonsterListAdapter.hiddenMonsterCardsList.clear();

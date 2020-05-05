@@ -27,14 +27,14 @@ public class MonsterDatabase {
             new MonsterInfo(17,"Dodogama",R.drawable.m_dodogama,Achievement.WORLD),
             new MonsterInfo(18,"Pink Rathian",R.drawable.m_pink_rathian,Achievement.WORLD),
             new MonsterInfo(19,"Bazelgeuse",R.drawable.m_bazelgeuse,Achievement.WORLD),
-            new MonsterInfo(20,"Deviljho",R.drawable.m_deviljho,Achievement.ICEBORNE),
+            new MonsterInfo(20,"Deviljho",R.drawable.m_deviljho,Achievement.WORLD_ADD),
             new MonsterInfo(21,"Lavasioth",R.drawable.m_lavasioth,Achievement.WORLD),
             new MonsterInfo(22,"Uragaan",R.drawable.m_uragaan,Achievement.WORLD),
             new MonsterInfo(23,"Azure Rathalos",R.drawable.m_azure_rathalos,Achievement.WORLD),
             new MonsterInfo(24,"Black Diablos",R.drawable.m_black_diablos,Achievement.WORLD),
             new MonsterInfo(25,"Nergigante",R.drawable.m_nergigante,Achievement.WORLD),
             new MonsterInfo(26,"Teostra",R.drawable.m_teostra,Achievement.WORLD),
-            new MonsterInfo(27,"Lunastra",R.drawable.m_lunastra,Achievement.ICEBORNE),
+            new MonsterInfo(27,"Lunastra",R.drawable.m_lunastra,Achievement.WORLD_ADD),
             new MonsterInfo(28,"Kushala Daora",R.drawable.m_kushala_daora,Achievement.WORLD),
             new MonsterInfo(29,"Vaal Hazak",R.drawable.m_vaal_hazak,Achievement.WORLD),
 
@@ -58,13 +58,14 @@ public class MonsterDatabase {
             new MonsterInfo(47,"Savage Deviljho",R.drawable.m_savage_deviljho,Achievement.ICEBORNE),
             new MonsterInfo(48,"Ruiner Nergigante",R.drawable.m_ruiner_nergigante,Achievement.ICEBORNE),
             new MonsterInfo(49,"Zinogre",R.drawable.m_zinogre,Achievement.ICEBORNE),
-            new MonsterInfo(50,"Stygian Zinogre",R.drawable.m_stygian_zinogre,Achievement.ADDITIONAL),
-            new MonsterInfo(51,"Scarred Yian Garuga",R.drawable.m_scarred_yian_garuga,Achievement.ICEBORNE),
-            new MonsterInfo(52,"Brute Tigrex",R.drawable.m_brute_tigrex,Achievement.ICEBORNE),
-            new MonsterInfo(53,"Gold Rathian",R.drawable.m_gold_rathian,Achievement.ICEBORNE),
-            new MonsterInfo(54,"Silver Rathalos",R.drawable.m_silver_rathalos,Achievement.ICEBORNE),
-            new MonsterInfo(55,"Rajang",R.drawable.m_rajang,Achievement.ADDITIONAL),
-            new MonsterInfo(56,"Furious Rajang",R.drawable.m_furious_rajang,Achievement.ADDITIONAL)
+            new MonsterInfo(50,"Stygian Zinogre",R.drawable.m_stygian_zinogre,Achievement.ICEBORNE_ADD),
+            new MonsterInfo(51,"Yian Garuga",R.drawable.m_yian_garuga,Achievement.ICEBORNE),
+            new MonsterInfo(52,"Scarred Yian Garuga",R.drawable.m_scarred_yian_garuga,Achievement.ICEBORNE),
+            new MonsterInfo(53,"Brute Tigrex",R.drawable.m_brute_tigrex,Achievement.ICEBORNE),
+            new MonsterInfo(54,"Gold Rathian",R.drawable.m_gold_rathian,Achievement.ICEBORNE),
+            new MonsterInfo(55,"Silver Rathalos",R.drawable.m_silver_rathalos,Achievement.ICEBORNE),
+            new MonsterInfo(56,"Rajang",R.drawable.m_rajang,Achievement.ICEBORNE_ADD),
+            new MonsterInfo(57,"Furious Rajang",R.drawable.m_furious_rajang,Achievement.ICEBORNE_ADD)
     );
 
 
