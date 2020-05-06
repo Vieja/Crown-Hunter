@@ -31,4 +31,62 @@
     <string name="coming_soon">Coming soon!</string>
 
     <string name="jagras">Great Jagras</string>
+    <string name="kulu" translatable="false">Kulu-Ya-Ku</string>
+    <string name="pukei" translatable="false">Pukei-Pukei</string>
+    <string name="barroth" translatable="false">Barroth</string>
+    <string name="jyuratodus" translatable="false">Jyuratodus</string>
+    <string name="tobi" translatable="false">Tobi-Kadachi</string>
+    <string name="anja" translatable="false">Anjanath</string>
+    <string name="rathian">Rathian</string>
+    <string name="tzitzi" translatable="false">Tzitzi-Ya-Ku</string>
+    <string name="paolumu" translatable="false">Paolumu</string>
+    <string name="girros">Great Girros</string>
+    <string name="radobaan" translatable="false">Radobaan</string>
+    <string name="legiana" translatable="false">Legiana</string>
+    <string name="odogaron" translatable="false">Odogaron</string>
+    <string name="rathalos" translatable="false">Rathalos</string>
+    <string name="diablos" translatable="false">Diablos</string>
+    <string name="kirin" translatable="false">Kirin</string>
+    <string name="dodogama" translatable="false">Dodogama</string>
+    <string name="pink_rathian">Pink Rathian</string>
+    <string name="bazelgeuse">Bazelgeuse</string>
+    <string name="lavasioth" translatable="false">Lavasioth</string>
+    <string name="uragaan" translatable="false">Uragaan</string>
+    <string name="azure_rathalos">Azure Rathalos</string>
+    <string name="black_diablos">Black Diablos</string>
+    <string name="nergigante">Nergigante</string>
+    <string name="teostra" translatable="false">Teostra</string>
+    <string name="kushala_daora" translatable="false">Kushala Daora</string>
+    <string name="vaal_hazak" translatable="false">Vaal Hazak</string>
+    <string name="lunastra" translatable="false">Lunastra</string>
+    <string name="deviljho" translatable="false">Deviljho</string>
+    <string name="beotodus" translatable="false">Beotodus</string>
+    <string name="banbaro" translatable="false">Banbaro</string>
+    <string name="viper_tobi">Viper Tobi-Kadachi</string>
+    <string name="night_paolumu">Nightshade Paolumu</string>
+    <string name="coral_pukei">Coral Pukei-Pukei</string>
+    <string name="barioth" translatable="false">Barioth</string>
+    <string name="nargacuga">Nargacuga</string>
+    <string name="glavenus" translatable="false">Glavenus</string>
+    <string name="tigrex" translatable="false">Tigrex</string>
+    <string name="brachydios" translatable="false">Brachydios</string>
+    <string name="acidic_glavenus">Acidic Glavenus</string>
+    <string name="shrieking_legiana">Shrieking Legiana</string>
+    <string name="fulgur_anja">Fulgur Anjanath</string>
+    <string name="ebony_odogaron">Ebony Odogaron</string>
+    <string name="velkhana">Velkhana</string>
+    <string name="seeth_bazelgeuse">Seething Bazelgeuse</string>
+    <string name="black_vaal">Blackveil Vaal Hazak</string>
+    <string name="namielle">Namielle</string>
+    <string name="sav_deviljho">Savage Deviljho</string>
+    <string name="ruin_nergigante">Ruiner Nergigante</string>
+    <string name="zinogre">Zinogre</string>
+    <string name="yian_garuga" translatable="false">Yian Garuga</string>
+    <string name="scar_yian_garuga">Scarred Yian Garuga</string>
+    <string name="brute_tigrex">Brute Tigrex</string>
+    <string name="gold_rathian">Gold Rathian</string>
+    <string name="silver_rathalos">Silver Rathalos</string>
+    <string name="stygian_zinogre">Stygian Zinogre</string>
+    <string name="rajang" translatable="false">Rajang</string>
+    <string name="furious_rajang">Furious Rajang</string>
 </resources>
