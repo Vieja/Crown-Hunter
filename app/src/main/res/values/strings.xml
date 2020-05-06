@@ -16,7 +16,7 @@
     <string name="s_q3_summ_off">Show full list on start</string>
     <string name="s_head2">App performance</string>
     <string name="s_q4">Show monsters\' names in English</string>
-    <string name="s_q4_summ">Restart needed to apply changes</string>
+    <string name="s_q4_summ">App in your locale language, monsters\' names in English</string>
 
     <string name="home_nav1">Your progress</string>
     <string name="home_nav2">Recommended event for you</string>
@@ -29,4 +29,6 @@
     <string name="home_giant_2">giant crowns left</string>
 
     <string name="coming_soon">Coming soon!</string>
+
+    <string name="jagras">Great Jagras</string>
 </resources>

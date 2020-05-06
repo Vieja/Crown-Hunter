@@ -33,7 +33,7 @@ public class HomeFragment extends Fragment {
         if (sb.toString().equals("NO_FILE")) {
             StringBuilder save = new StringBuilder();
             for (MonsterInfo monster : MonsterDatabase.list)
-                save.append(monster.getPosition()).append(";").append(monster.getName()).append(";").append("no;no;\n");
+                save.append(monster.getPosition()).append(";").append("no;no;\n");
             FileIO.save(getContext(),save);
             sb = FileIO.load(getContext());
         }
@@ -41,16 +41,16 @@ public class HomeFragment extends Fragment {
         String[] lines = sb.toString().split("\n");
         for (String line: lines) {
             String[] info = line.split(";");
-            Achievement type = MonsterDatabase.getMonsterType(info[1]);
+            Achievement type = MonsterDatabase.getMonsterType(Integer.parseInt(info[0]));
             switch (type) {
                 case WORLD:
-                    mini+= (info[2].equals("no") ? 1 : 0);
-                    giant+= (info[3].equals("no") ? 1 : 0);
+                    mini+= (info[1].equals("no") ? 1 : 0);
+                    giant+= (info[2].equals("no") ? 1 : 0);
                     break;
                 case ICEBORNE:
                 case WORLD_ADD:
-                    mini_ice+= (info[2].equals("no") ? 1 : 0);
-                    giant_ice+= (info[3].equals("no") ? 1 : 0);
+                    mini_ice+= (info[1].equals("no") ? 1 : 0);
+                    giant_ice+= (info[2].equals("no") ? 1 : 0);
                     break;
             }
         }
@@ -63,7 +63,6 @@ public class HomeFragment extends Fragment {
         t3.setText(getContext().getString(R.string.home_mini_1)+" "+ mini_ice+" "+getContext().getString(R.string.home_mini_2));
         TextView t4 = view.findViewById(R.id.text_giant_ice);
         t4.setText(getContext().getString(R.string.home_giant_1)+" "+ giant_ice+" "+getContext().getString(R.string.home_giant_2));
-
 
         return view;
 

@@ -1,10 +1,16 @@
 package com.vieja.crownhunter.activity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.vieja.crownhunter.MonsterDatabase;
 import com.vieja.crownhunter.R;
 import com.vieja.crownhunter.activity.EventsFragment;
 import com.vieja.crownhunter.activity.HomeFragment;
@@ -14,6 +20,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.preference.PreferenceManager;
+
+import java.util.Locale;
 
 
 public class MainActivity extends AppCompatActivity
@@ -25,12 +34,14 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ActionBar actionbar = getSupportActionBar();
-        //actionbar.setDisplayHomeAsUpEnabled(true);
-
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(this);
         navView.setItemIconTintList(null);
+
+
+
+
+        MonsterDatabase.populateMonsterDatabase();
         loadFragment(new HomeFragment());
 
     }
