@@ -24,7 +24,7 @@
     <string name="iceborne">Iceborne</string>
 
     <string name="home_mini_1"></string>
-    <string name="home_mini_2"> miniature crowns left</string>
+    <string name="home_mini_2">miniature crowns left</string>
     <string name="home_giant_1"></string>
-    <string name="home_giant_2">giant crowns</string>
+    <string name="home_giant_2">giant crowns left</string>
 </resources>

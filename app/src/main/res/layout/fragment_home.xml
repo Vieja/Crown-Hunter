@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    android:paddingBottom="56dp">
+    android:paddingBottom="56dp"
+    >
 
     <TextView
         android:id="@+id/textView3"
@@ -94,16 +95,17 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_marginLeft="30dp"
-                        app:srcCompat="@drawable/h_mini" />
+                        android:layout_marginLeft="20dp"
+                        app:srcCompat="@drawable/h_mini"
+                        android:layout_marginStart="20dp" />
 
                     <TextView
                         android:id="@+id/text_mini"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="TextView"
-                        android:layout_marginLeft="20dp"
-                        android:textSize="18sp" />
+                        android:layout_marginLeft="10dp"
+                        android:textSize="18sp"
+                        android:layout_marginStart="10dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -116,16 +118,17 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_marginLeft="30dp"
-                        app:srcCompat="@drawable/h_giant" />
+                        android:layout_marginLeft="20dp"
+                        app:srcCompat="@drawable/h_giant"
+                        android:layout_marginStart="20dp" />
 
                     <TextView
                         android:id="@+id/text_giant"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="TextView"
-                        android:layout_marginLeft="20dp"
-                        android:textSize="18sp" />
+                        android:layout_marginLeft="10dp"
+                        android:textSize="18sp"
+                        android:layout_marginStart="10dp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -151,16 +154,17 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_marginLeft="30dp"
-                        app:srcCompat="@drawable/h_mini_ice" />
+                        android:layout_marginLeft="20dp"
+                        app:srcCompat="@drawable/h_mini_ice"
+                        android:layout_marginStart="20dp" />
 
                     <TextView
                         android:id="@+id/text_mini_ice"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:text="TextView"
-                        android:textSize="18sp" />
+                        android:layout_marginLeft="10dp"
+                        android:textSize="18sp"
+                        android:layout_marginStart="10dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -172,16 +176,17 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_marginLeft="30dp"
-                        app:srcCompat="@drawable/h_giant_ice" />
+                        android:layout_marginLeft="20dp"
+                        app:srcCompat="@drawable/h_giant_ice"
+                        android:layout_marginStart="20dp" />
 
                     <TextView
                         android:id="@+id/text_giant_ice"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:text="TextView"
-                        android:textSize="18sp" />
+                        android:layout_marginLeft="10dp"
+                        android:textSize="18sp"
+                        android:layout_marginStart="10dp" />
                 </LinearLayout>
             </LinearLayout>
 

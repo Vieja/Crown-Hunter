@@ -21,8 +21,8 @@
     <string name="home_nav2">Polecane wydarzenie</string>
     <string name="world">World</string>
     <string name="iceborne">Iceborne</string>
-    <string name="home_mini_1">pozostały</string>
-    <string name="home_mini_2">miniaturowe korony</string>
-    <string name="home_giant_1">pozostały</string>
-    <string name="home_giant_2">złote korony</string>
+    <string name="home_mini_1">pozostało</string>
+    <string name="home_mini_2">miniaturowych koron</string>
+    <string name="home_giant_1">pozostało</string>
+    <string name="home_giant_2">złotych koron</string>
 </resources>

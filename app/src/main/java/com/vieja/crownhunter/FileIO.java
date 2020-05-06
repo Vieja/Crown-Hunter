@@ -48,21 +48,4 @@ public class FileIO {
         }
         return sb;
     }
-
-//    public static void load(Context context) {
-//        FileInputStream fis = null;
-//        try {
-//            fis = context.openFileInput(FILE_NAME);
-//            InputStreamReader isr = new InputStreamReader(fis);
-//            BufferedReader br = new BufferedReader(isr);
-//            StringBuilder sb = new StringBuilder();
-//            String text;
-//            while ((text = br.readLine()) != null) {
-//                sb.append(text).append("\n");
-//                Log.v("banbaro", String.valueOf(sb));
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
 }
