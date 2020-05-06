@@ -9,6 +9,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.vieja.crownhunter.MonsterDatabase;
 import com.vieja.crownhunter.R;
@@ -38,7 +42,10 @@ public class MainActivity extends AppCompatActivity
         navView.setOnNavigationItemSelectedListener(this);
         navView.setItemIconTintList(null);
 
-
+        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
+        AdView myAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        myAdView.loadAd(adRequest);
 
 
         MonsterDatabase.populateMonsterDatabase();
