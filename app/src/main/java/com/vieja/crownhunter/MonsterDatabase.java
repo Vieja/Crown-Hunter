@@ -1,9 +1,5 @@
 package com.vieja.crownhunter;
 
-import android.bluetooth.le.ScanSettings;
-import android.content.res.Resources;
-import android.util.Log;
-
 import java.util.Arrays;
 import java.util.List;
 

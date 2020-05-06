@@ -1,7 +1,6 @@
 package com.vieja.crownhunter;
 
 import android.content.Context;
-import android.util.Log;
 import android.widget.Toast;
 
 import java.io.BufferedReader;

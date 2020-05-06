@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -42,7 +41,7 @@ public class MainActivity extends AppCompatActivity
         navView.setOnNavigationItemSelectedListener(this);
         navView.setItemIconTintList(null);
 
-        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
+        MobileAds.initialize(this, "ca-app-pub-8421723784560504~6615005193");
         AdView myAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         myAdView.loadAd(adRequest);
