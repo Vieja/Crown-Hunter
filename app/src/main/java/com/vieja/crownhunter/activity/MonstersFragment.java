@@ -52,10 +52,6 @@ public class MonstersFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_monsters, null);
 
-        AdView myAdView2 = view.findViewById(R.id.adView2);
-        AdRequest adRequest2 = new AdRequest.Builder().build();
-        myAdView2.loadAd(adRequest2);
-
         prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
         populateMonsterCardsList();
 
