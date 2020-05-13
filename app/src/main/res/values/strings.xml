@@ -95,4 +95,6 @@
     <string name="ad_publisher" translatable="false">ca-app-pub-8421723784560504~6615005193</string>
     <string name="ad_main" translatable="false">ca-app-pub-8421723784560504/7284540292</string>
     <string name="ad_events" translatable="false">ca-app-pub-8421723784560504/3941219322</string>
+    <string name="scheduler" translatable="false">Due to the effects of COVID-19, updates to the Event Quest Schedule have been temporarily suspended. Please refer to the in-game event schedule for the most recent information.</string>
+    <string name="temporarily_unavailable" translatable="false">Temporarily Unavailable</string>
 </resources>

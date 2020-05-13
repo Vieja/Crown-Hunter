@@ -7,6 +7,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
@@ -16,15 +19,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.vieja.crownhunter.MonsterDatabase;
 import com.vieja.crownhunter.R;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 
 public class MainActivity extends AppCompatActivity
         implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    private FrameLayout adContainerView;
     private AdView adView;
     private AdSize adSize;
 
@@ -38,7 +36,7 @@ public class MainActivity extends AppCompatActivity
         navView.setItemIconTintList(null);
 
         MobileAds.initialize(this, getString(R.string.ad_publisher));
-        adContainerView = findViewById(R.id.ad_container);
+        FrameLayout adContainerView = findViewById(R.id.ad_container);
         adView = new AdView(this);
         adView.setAdUnitId(getString(R.string.ad_main));
         adContainerView.addView(adView);
@@ -50,8 +48,8 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    private boolean loadFragment(Fragment fragment){
-        if(fragment != null){
+    private boolean loadFragment(Fragment fragment) {
+        if (fragment != null) {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, fragment)
@@ -89,10 +87,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
-        switch (item.getItemId()) {
-            case R.id.settings:
-                fragment = new SettingsFragment();
-                break;
+        if (item.getItemId() == R.id.settings) {
+            fragment = new SettingsFragment();
         }
         return loadFragment(fragment);
     }

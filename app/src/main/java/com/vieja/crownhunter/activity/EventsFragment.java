@@ -17,8 +17,6 @@ import com.vieja.crownhunter.R;
 
 public class EventsFragment extends Fragment {
 
-    private FrameLayout adContainerView;
-    private AdView adView;
     private AdSize adSize;
 
     public EventsFragment(AdSize adSize) {
@@ -31,9 +29,9 @@ public class EventsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_events, null);
 
-        adContainerView = view.findViewById(R.id.ad_container);
+        FrameLayout adContainerView = view.findViewById(R.id.ad_container);
         // Step 1 - Create an AdView and set the ad unit ID on it.
-        adView = new AdView(view.getContext());
+        AdView adView = new AdView(view.getContext());
         adView.setAdUnitId(getString(R.string.ad_main));
         adContainerView.addView(adView);
         adView.setAdSize(adSize);

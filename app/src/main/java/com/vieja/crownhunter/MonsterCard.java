@@ -3,8 +3,8 @@ package com.vieja.crownhunter;
 public class MonsterCard {
     private int monsterIcon;
     private String name;
-    private boolean miniature = false;
-    private boolean giant = false;
+    private boolean miniature;
+    private boolean giant;
     private int position;
 
     public MonsterCard(int monsterIcon, String name, boolean miniature, boolean giant, int position) {
