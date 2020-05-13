@@ -18,15 +18,13 @@
     <string name="s_q4">Show monsters\' names in English</string>
     <string name="s_q4_summ">App in your locale language, monsters\' names in English</string>
 
-    <string name="home_nav1">Your progress</string>
+    <string name="home_nav1">Crowns left</string>
     <string name="home_nav2">Recommended event for you</string>
     <string name="world">World</string>
     <string name="iceborne">Iceborne</string>
 
-    <string name="home_mini_1"></string>
-    <string name="home_mini_2">miniature crowns left</string>
-    <string name="home_giant_1"></string>
-    <string name="home_giant_2">giant crowns left</string>
+    <string name="home_mini">miniature</string>
+    <string name="home_giant">giant</string>
 
     <string name="coming_soon">Coming soon!</string>
 
@@ -89,4 +87,14 @@
     <string name="stygian_zinogre">Stygian Zinogre</string>
     <string name="rajang" translatable="false">Rajang</string>
     <string name="furious_rajang">Furious Rajang</string>
+
+    <string name="ad_publisher_test" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="ad_main_test" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="ad_events_test" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+
+    <string name="ad_publisher" translatable="false">ca-app-pub-8421723784560504~6615005193</string>
+    <string name="ad_main" translatable="false">ca-app-pub-8421723784560504/7284540292</string>
+    <string name="ad_events" translatable="false">ca-app-pub-8421723784560504/3941219322</string>
+    <string name="scheduler" translatable="false">Due to the effects of COVID-19, updates to the Event Quest Schedule have been temporarily suspended. Please refer to the in-game event schedule for the most recent information.</string>
+    <string name="temporarily_unavailable" translatable="false">Temporarily Unavailable</string>
 </resources>

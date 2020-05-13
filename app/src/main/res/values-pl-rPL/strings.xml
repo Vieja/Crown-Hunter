@@ -17,14 +17,12 @@
     <string name="s_head2">Właściwości aplikacji</string>
     <string name="s_q4">Pokaż nazwy potworów po angielsku</string>
     <string name="s_q4_summ">Apka po polsku, potwory po angielsku</string>
-    <string name="home_nav1">Twój postęp</string>
+    <string name="home_nav1">Brakujące korony</string>
     <string name="home_nav2">Polecane wydarzenie</string>
     <string name="world">World</string>
     <string name="iceborne">Iceborne</string>
-    <string name="home_mini_1">pozostało</string>
-    <string name="home_mini_2">miniaturowych koron</string>
-    <string name="home_giant_1">pozostało</string>
-    <string name="home_giant_2">złotych koron</string>
+    <string name="home_mini">miniaturowych</string>
+    <string name="home_giant">ogromnych</string>
     <string name="coming_soon">Dostępne wkrótce!</string>
     <string name="jagras">Wielki Jagras</string>
     <string name="rathian">Rathiana</string>

@@ -17,12 +17,35 @@ import java.util.Comparator;
 
 public class MonsterListAdapter extends RecyclerView.Adapter<MonsterListAdapter.ViewHolder> {
 
-    private Context context;
     public static ArrayList<MonsterCard> monsterList;
     public static ArrayList<MonsterCard> hiddenMonsterCardsList = new ArrayList<>();
     public static ArrayList<MonsterCard> filteredMonsterCardsList = new ArrayList<>();
+    private Context context;
 
-    public static class ViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener{
+    public MonsterListAdapter(ArrayList<MonsterCard> monsterList, Context context) {
+        this.context = context;
+        MonsterListAdapter.monsterList = monsterList;
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.monster_card, parent, false);
+        ViewHolder vh = new ViewHolder(v, context);
+        return vh;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.bind(position);
+    }
+
+    @Override
+    public int getItemCount() {
+        return monsterList.size();
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public ImageView monster_icon;
         public TextView name;
         public CheckBox mini;
@@ -51,19 +74,19 @@ public class MonsterListAdapter extends RecyclerView.Adapter<MonsterListAdapter.
             ArrayList<MonsterCard> toSave = new ArrayList<>(monsterList);
             toSave.addAll(hiddenMonsterCardsList);
             toSave.addAll(filteredMonsterCardsList);
-            Collections.sort(toSave, new Comparator<MonsterCard>(){
+            Collections.sort(toSave, new Comparator<MonsterCard>() {
                 public int compare(MonsterCard m1, MonsterCard m2) {
                     return m1.getPosition() - m2.getPosition();
                 }
             });
             StringBuilder save = new StringBuilder();
-            for (MonsterCard monster : toSave){
+            for (MonsterCard monster : toSave) {
                 save.append(monster.getPosition()).append(";")
-                        .append( (monster.isMiniature()) ? "yes;" : "no;" )
-                        .append( (monster.isGiant()) ? "yes;" : "no;" )
+                        .append((monster.isMiniature()) ? "yes;" : "no;")
+                        .append((monster.isGiant()) ? "yes;" : "no;")
                         .append("\n");
             }
-            FileIO.save(context,save);
+            FileIO.save(context, save);
         }
 
         public void bind(int position) {
@@ -75,29 +98,6 @@ public class MonsterListAdapter extends RecyclerView.Adapter<MonsterListAdapter.
             mini.setChecked(card.isMiniature());
             giant.setChecked(card.isGiant());
         }
-    }
-
-    public MonsterListAdapter(ArrayList<MonsterCard> monsterList, Context context) {
-        this.context = context;
-        MonsterListAdapter.monsterList = monsterList;
-    }
-
-    @NonNull
-    @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.monster_card, parent, false);
-        ViewHolder vh = new ViewHolder(v, context);
-        return vh;
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.bind(position);
-    }
-
-    @Override
-    public int getItemCount() {
-        return monsterList.size();
     }
 
 

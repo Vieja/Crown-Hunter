@@ -1,36 +1,30 @@
 package com.vieja.crownhunter.activity;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.vieja.crownhunter.MonsterDatabase;
 import com.vieja.crownhunter.R;
-import com.vieja.crownhunter.activity.EventsFragment;
-import com.vieja.crownhunter.activity.HomeFragment;
-import com.vieja.crownhunter.activity.MonstersFragment;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.preference.PreferenceManager;
-
-import java.util.Locale;
 
 
 public class MainActivity extends AppCompatActivity
         implements BottomNavigationView.OnNavigationItemSelectedListener {
 
+    private AdView adView;
+    private AdSize adSize;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +35,12 @@ public class MainActivity extends AppCompatActivity
         navView.setOnNavigationItemSelectedListener(this);
         navView.setItemIconTintList(null);
 
-        MobileAds.initialize(this, "ca-app-pub-8421723784560504~6615005193");
-        AdView myAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        myAdView.loadAd(adRequest);
+        MobileAds.initialize(this, getString(R.string.ad_publisher));
+        FrameLayout adContainerView = findViewById(R.id.ad_container);
+        adView = new AdView(this);
+        adView.setAdUnitId(getString(R.string.ad_main));
+        adContainerView.addView(adView);
+        loadBanner();
 
 
         MonsterDatabase.populateMonsterDatabase();
@@ -52,8 +48,8 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    private boolean loadFragment(Fragment fragment){
-        if(fragment != null){
+    private boolean loadFragment(Fragment fragment) {
+        if (fragment != null) {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, fragment)
@@ -61,6 +57,25 @@ public class MainActivity extends AppCompatActivity
             return true;
         }
         return false;
+    }
+
+    private void loadBanner() {
+        AdRequest adRequest =
+                new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                        .build();
+        adSize = getAdSize();
+        adView.setAdSize(adSize);
+        adView.loadAd(adRequest);
+    }
+
+    private AdSize getAdSize() {
+        Display display = getWindowManager().getDefaultDisplay();
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        display.getMetrics(outMetrics);
+        float widthPixels = outMetrics.widthPixels;
+        float density = outMetrics.density;
+        int adWidth = (int) (widthPixels / density);
+        return AdSize.getPortraitBannerAdSizeWithWidth(this, adWidth);
     }
 
     @Override
@@ -72,10 +87,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
-        switch (item.getItemId()) {
-            case R.id.settings:
-                fragment = new SettingsFragment();
-                break;
+        if (item.getItemId() == R.id.settings) {
+            fragment = new SettingsFragment();
         }
         return loadFragment(fragment);
     }
@@ -91,7 +104,7 @@ public class MainActivity extends AppCompatActivity
                 fragment = new MonstersFragment();
                 break;
             case R.id.navigation_events:
-                fragment = new EventsFragment();
+                fragment = new EventsFragment(adSize);
                 break;
         }
         return loadFragment(fragment);
