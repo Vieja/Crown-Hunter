@@ -88,6 +88,11 @@
     <string name="rajang" translatable="false">Rajang</string>
     <string name="furious_rajang">Furious Rajang</string>
 
-    <string name="ad_main" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="ad_events" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="ad_publisher_test" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="ad_main_test" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="ad_events_test" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+
+    <string name="ad_publisher" translatable="false">ca-app-pub-8421723784560504~6615005193</string>
+    <string name="ad_main" translatable="false">ca-app-pub-8421723784560504/7284540292</string>
+    <string name="ad_events" translatable="false">ca-app-pub-8421723784560504/3941219322</string>
 </resources>
