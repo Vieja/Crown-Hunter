@@ -12,10 +12,8 @@ import androidx.fragment.app.Fragment;
 
 import com.vieja.crownhunter.Achievement;
 import com.vieja.crownhunter.FileIO;
-import com.vieja.crownhunter.MonsterCard;
 import com.vieja.crownhunter.MonsterDatabase;
 import com.vieja.crownhunter.MonsterInfo;
-import com.vieja.crownhunter.MonsterListAdapter;
 import com.vieja.crownhunter.R;
 
 public class HomeFragment extends Fragment {
@@ -55,14 +53,14 @@ public class HomeFragment extends Fragment {
             }
         }
 
-        TextView t1 = view.findViewById(R.id.text_mini);
-        t1.setText(getContext().getString(R.string.home_mini_1)+" "+ mini+" "+getContext().getString(R.string.home_mini_2));
-        TextView t2 = view.findViewById(R.id.text_giant);
-        t2.setText(getContext().getString(R.string.home_giant_1)+" "+ giant+" "+getContext().getString(R.string.home_giant_2));
-        TextView t3 = view.findViewById(R.id.text_mini_ice);
-        t3.setText(getContext().getString(R.string.home_mini_1)+" "+ mini_ice+" "+getContext().getString(R.string.home_mini_2));
-        TextView t4 = view.findViewById(R.id.text_giant_ice);
-        t4.setText(getContext().getString(R.string.home_giant_1)+" "+ giant_ice+" "+getContext().getString(R.string.home_giant_2));
+        TextView mini_1 = view.findViewById(R.id.text_mini);
+        mini_1.setText(String.valueOf(mini));
+        TextView giant_1 = view.findViewById(R.id.text_giant);
+        giant_1.setText(String.valueOf(giant));
+        TextView ice_mini_1 = view.findViewById(R.id.text_mini_ice);
+        ice_mini_1.setText(String.valueOf(mini_ice));
+        TextView ice_giant_1 = view.findViewById(R.id.text_giant_ice);
+        ice_giant_1.setText(String.valueOf(giant_ice));
 
         return view;
 
