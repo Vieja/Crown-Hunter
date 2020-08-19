@@ -10,4 +10,4 @@ Android application available in Google Play who tracks your progress in Monster
 [Show application in Google Play](https://play.google.com/store/apps/details?id=com.vieja.crownhunter)
 
 ![Alt text](zdj1.png?raw=true "zdj1")
-![Alt text](zdj1.png?raw=true "zdj2")
+![Alt text](zdj2.png?raw=true "zdj2")
