@@ -35,10 +35,10 @@ public class MainActivity extends AppCompatActivity
         navView.setOnNavigationItemSelectedListener(this);
         navView.setItemIconTintList(null);
 
-        MobileAds.initialize(this, getString(R.string.ad_publisher));
+        MobileAds.initialize(this, getString(R.string.ad_publisher_test));
         FrameLayout adContainerView = findViewById(R.id.ad_container);
         adView = new AdView(this);
-        adView.setAdUnitId(getString(R.string.ad_main));
+        adView.setAdUnitId(getString(R.string.ad_main_test));
         adContainerView.addView(adView);
         loadBanner();
 

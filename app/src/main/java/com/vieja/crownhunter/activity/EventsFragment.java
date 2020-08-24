@@ -32,7 +32,7 @@ public class EventsFragment extends Fragment {
         FrameLayout adContainerView = view.findViewById(R.id.ad_container);
         // Step 1 - Create an AdView and set the ad unit ID on it.
         AdView adView = new AdView(view.getContext());
-        adView.setAdUnitId(getString(R.string.ad_main));
+        adView.setAdUnitId(getString(R.string.ad_main_test));
         adContainerView.addView(adView);
         adView.setAdSize(adSize);
         AdRequest adRequest =
