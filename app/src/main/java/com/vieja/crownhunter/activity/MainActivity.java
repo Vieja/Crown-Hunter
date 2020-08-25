@@ -2,6 +2,7 @@ package com.vieja.crownhunter.activity;
 
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,6 +19,13 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.vieja.crownhunter.MonsterDatabase;
 import com.vieja.crownhunter.R;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+
+import java.io.IOException;
+import java.sql.SQLOutput;
 
 
 public class MainActivity extends AppCompatActivity
@@ -42,9 +50,31 @@ public class MainActivity extends AppCompatActivity
         adContainerView.addView(adView);
         loadBanner();
 
-
         MonsterDatabase.populateMonsterDatabase();
         loadFragment(new HomeFragment());
+
+        Thread thread = new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                try  {
+                    try {
+                        Document doc = Jsoup.connect("https://game.capcom.com/world/us/schedule.html").get();
+                        Log.v("htmlek","yesss");
+                        Element body = doc.body();
+                        Log.v("htmlek",body.toString());
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        Log.v("htmlek","nope");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        thread.start();
 
     }
 
