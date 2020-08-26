@@ -11,3 +11,5 @@ Android application available in Google Play who tracks your progress in Monster
 
 ![Alt text](zdj1.png?raw=true "zdj1")
 ![Alt text](zdj2.png?raw=true "zdj2")
+</br>
+<img src="monster-list.gif" width="260">
