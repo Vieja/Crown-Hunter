@@ -23,6 +23,7 @@ import com.vieja.crownhunter.R;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.sql.SQLOutput;
@@ -61,8 +62,13 @@ public class MainActivity extends AppCompatActivity
                     try {
                         Document doc = Jsoup.connect("https://game.capcom.com/world/us/schedule.html").get();
                         Log.v("htmlek","yesss");
-                        Element body = doc.body();
-                        Log.v("htmlek",body.toString());
+                        Elements elements = doc.getElementsByClass("quest");
+                        for (Element quest : elements) {
+                            String title = quest.select("div.title > span").text();
+                            String available = quest.select("p.terms").text();
+                            Log.v("htmlek",title+", "+available);
+                        }
+
 
                     } catch (IOException e) {
                         e.printStackTrace();
