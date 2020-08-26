@@ -97,4 +97,13 @@
     <string name="ad_events" translatable="false">ca-app-pub-8421723784560504/3941219322</string>
     <string name="scheduler" translatable="false">Due to the effects of COVID-19, updates to the Event Quest Schedule have been temporarily suspended. Please refer to the in-game event schedule for the most recent information.</string>
     <string name="temporarily_unavailable" translatable="false">Temporarily Unavailable</string>
+    <string name="usj_gold_star">USJ: Gold Star Treatment</string>
+    <string name="a_rush_of_blood">A Rush of Blood</string>
+    <string name="usj_blazing">USJ: Blazing Azure Stars!</string>
+    <string name="egg_lovers">Egg Lovers United</string>
+    <string name="deep_green">Deep Green Blues</string>
+    <string name="wildspire_bolero">Wildspire Bolero</string>
+    <string name="coral_waltz">Coral Waltz</string>
+    <string name="effluvial_opera">Effluvial Opera</string>
+    <string name="rock_n_roll">Rock N\' Roll Recess</string>
 </resources>

@@ -17,16 +17,20 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.vieja.crownhunter.FileIO;
 import com.vieja.crownhunter.MonsterDatabase;
 import com.vieja.crownhunter.R;
 
+import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.io.FileReader;
 import java.io.IOException;
 import java.sql.SQLOutput;
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity
@@ -63,11 +67,16 @@ public class MainActivity extends AppCompatActivity
                         Document doc = Jsoup.connect("https://game.capcom.com/world/us/schedule.html").get();
                         Log.v("htmlek","yesss");
                         Elements elements = doc.getElementsByClass("quest");
+                        ArrayList<String> quests_titles = new ArrayList<>();
+                        ArrayList<String> quests_dates = new ArrayList<>();
                         for (Element quest : elements) {
                             String title = quest.select("div.title > span").text();
                             String available = quest.select("p.terms").text();
+                            quests_titles.add(title);
+                            quests_dates.add(available);
                             Log.v("htmlek",title+", "+available);
                         }
+
 
 
                     } catch (IOException e) {
