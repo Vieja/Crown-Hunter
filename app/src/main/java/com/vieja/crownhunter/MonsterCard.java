@@ -1,11 +1,11 @@
 package com.vieja.crownhunter;
 
 public class MonsterCard {
-    private int monsterIcon;
-    private String name;
+    private final int monsterIcon;
+    private final String name;
     private boolean miniature;
     private boolean giant;
-    private int position;
+    private final int position;
 
     public MonsterCard(int monsterIcon, String name, boolean miniature, boolean giant, int position) {
         this.monsterIcon = monsterIcon;

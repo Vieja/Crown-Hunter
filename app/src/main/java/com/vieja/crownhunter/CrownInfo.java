@@ -1,9 +1,9 @@
 package com.vieja.crownhunter;
 
 public class CrownInfo {
-    private int monsterRes;
-    private boolean isGiant;
-    private int chance;
+    private final int monsterRes;
+    private final boolean isGiant;
+    private final int chance;
 
     public CrownInfo(int monsterRes, boolean isGiant, int chance) {
         this.monsterRes = monsterRes;

@@ -1,10 +1,10 @@
 package com.vieja.crownhunter;
 
 public class MonsterInfo {
-    private int position;
-    private int nameRes;
-    private int monsterIcon;
-    private Achievement type;
+    private final int position;
+    private final int nameRes;
+    private final int monsterIcon;
+    private final Achievement type;
 
     public MonsterInfo(int position, int nameRes, int monsterIcon, Achievement type) {
         this.position = position;

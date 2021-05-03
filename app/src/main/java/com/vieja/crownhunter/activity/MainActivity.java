@@ -2,7 +2,6 @@ package com.vieja.crownhunter.activity;
 
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,20 +16,9 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.vieja.crownhunter.FileIO;
 import com.vieja.crownhunter.MonsterDatabase;
+import com.vieja.crownhunter.EventDatabase;
 import com.vieja.crownhunter.R;
-
-import org.json.JSONObject;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
-import java.io.FileReader;
-import java.io.IOException;
-import java.sql.SQLOutput;
-import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity
@@ -56,41 +44,8 @@ public class MainActivity extends AppCompatActivity
         loadBanner();
 
         MonsterDatabase.populateMonsterDatabase();
+        EventDatabase.populateEventDatabase();
         loadFragment(new HomeFragment());
-
-        Thread thread = new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                try  {
-                    try {
-                        Document doc = Jsoup.connect("https://game.capcom.com/world/us/schedule.html").get();
-                        Log.v("htmlek","yesss");
-                        Elements elements = doc.getElementsByClass("quest");
-                        ArrayList<String> quests_titles = new ArrayList<>();
-                        ArrayList<String> quests_dates = new ArrayList<>();
-                        for (Element quest : elements) {
-                            String title = quest.select("div.title > span").text();
-                            String available = quest.select("p.terms").text();
-                            quests_titles.add(title);
-                            quests_dates.add(available);
-                            Log.v("htmlek",title+", "+available);
-                        }
-
-
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                        Log.v("htmlek","nope");
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
-        thread.start();
-
     }
 
     private boolean loadFragment(Fragment fragment) {
@@ -149,7 +104,7 @@ public class MainActivity extends AppCompatActivity
                 fragment = new MonstersFragment();
                 break;
             case R.id.navigation_events:
-                fragment = new EventsFragment(adSize);
+                fragment = new EventsFragment();
                 break;
         }
         return loadFragment(fragment);

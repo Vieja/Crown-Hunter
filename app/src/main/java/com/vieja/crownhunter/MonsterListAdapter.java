@@ -20,7 +20,7 @@ public class MonsterListAdapter extends RecyclerView.Adapter<MonsterListAdapter.
     public static ArrayList<MonsterCard> monsterList;
     public static ArrayList<MonsterCard> hiddenMonsterCardsList = new ArrayList<>();
     public static ArrayList<MonsterCard> filteredMonsterCardsList = new ArrayList<>();
-    private Context context;
+    private final Context context;
 
     public MonsterListAdapter(ArrayList<MonsterCard> monsterList, Context context) {
         this.context = context;
@@ -31,8 +31,7 @@ public class MonsterListAdapter extends RecyclerView.Adapter<MonsterListAdapter.
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.monster_card, parent, false);
-        ViewHolder vh = new ViewHolder(v, context);
-        return vh;
+        return new ViewHolder(v, context);
     }
 
     @Override
