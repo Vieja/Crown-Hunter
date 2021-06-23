@@ -21,6 +21,9 @@
             android:layout_height="wrap_content"
             android:textAlignment="textStart"
             android:textSize="17sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:padding="2dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -88,6 +91,9 @@
             android:layout_height="wrap_content"
             android:textAlignment="textStart"
             android:textSize="14sp"
+            android:padding="2dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/monster_icons" />

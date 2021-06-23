@@ -1,6 +1,6 @@
 package com.vieja.crownhunter.activity;
 
-public class EventCard {
+public class EventCard implements Comparable{
     private final String name;
     private int chances;
     private final int monsterIcon1;
@@ -49,5 +49,10 @@ public class EventCard {
 
     public int getMonsterIcon5() {
         return monsterIcon5;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return ((EventCard)o).chances-this.chances;
     }
 }

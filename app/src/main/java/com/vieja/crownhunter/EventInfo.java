@@ -5,11 +5,15 @@ import java.util.ArrayList;
 public class EventInfo {
     private final int nameRes;
     private final int stars;
+    private final boolean isIceborne;
+    private final boolean isOptional;
     private final ArrayList<CrownInfo> crownChances;
 
-    public EventInfo(int nameRes, int stars, ArrayList<CrownInfo> crownChances) {
+    public EventInfo(int nameRes, int stars, boolean isIceborne, boolean isOptional, ArrayList<CrownInfo> crownChances) {
         this.nameRes = nameRes;
         this.stars = stars;
+        this.isIceborne = isIceborne;
+        this.isOptional = isOptional;
         this.crownChances = crownChances;
     }
 

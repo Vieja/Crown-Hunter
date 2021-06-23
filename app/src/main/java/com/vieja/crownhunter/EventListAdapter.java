@@ -45,6 +45,7 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.View
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        public Context context;
         public TextView name;
         public ImageView monster_icon1;
         public ImageView monster_icon2;
@@ -55,6 +56,7 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.View
 
         public ViewHolder(View itemView, Context c) {
             super(itemView);
+            context = c;
             name = itemView.findViewById(R.id.name);
             monster_icon1 = itemView.findViewById(R.id.monster_icon1);
             monster_icon2 = itemView.findViewById(R.id.monster_icon2);
@@ -77,7 +79,7 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.View
             if (card.getMonsterIcon3() != 0) monster_icon3.setImageResource(card.getMonsterIcon3());
             if (card.getMonsterIcon4() != 0) monster_icon4.setImageResource(card.getMonsterIcon4());
             if (card.getMonsterIcon5() != 0) monster_icon5.setImageResource(card.getMonsterIcon5());
-            chances.setText(Integer.toString(card.getChances()));
+            chances.setText(context.getResources().getString(R.string.chances)+' '+card.getChances()+'%');
         }
     }
 }
