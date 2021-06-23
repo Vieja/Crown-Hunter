@@ -29,6 +29,14 @@ public class EventInfo {
         return crownChances;
     }
 
+    public boolean isIceborne() {
+        return isIceborne;
+    }
+
+    public boolean isOptional() {
+        return isOptional;
+    }
+
     public ArrayList<Integer> getFiveMostersRes() {
         ArrayList<Integer> result = new ArrayList<>();
         for (CrownInfo info: crownChances) {

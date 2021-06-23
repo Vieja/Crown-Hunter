@@ -68,17 +68,19 @@ public class EventsFragment extends Fragment {
 
             int monsterNameRes = MonsterDatabase.getMonsterNameRes(Integer.parseInt(info[0]));
             String monsterName = resources.getString(monsterNameRes);
-            if (!hide_iceborne || (hide_iceborne && (type == Achievement.WORLD || type == Achievement.WORLD_ADD))) {
-                if (!hide_optional || (hide_optional && hide_iceborne && type != Achievement.WORLD_ADD) || (hide_optional && !hide_iceborne && type != Achievement.ICEBORNE_ADD))
-                    monsterCardsList.add(new MonsterCard(icon, monsterName, (info[1].equals("yes")), (info[2].equals("yes")), Integer.parseInt(info[0])));
-            }
+            monsterCardsList.add(new MonsterCard(icon, monsterName, (info[1].equals("yes")), (info[2].equals("yes")), Integer.parseInt(info[0])));
         }
-
 
         for (EventInfo info: EventDatabase.list){
             ArrayList<Integer> monsters = info.getFiveMostersRes();
             int chance = getOverallChanceForCrown(info.getCrownChances());
-            if (chance>0) eventCardsList.add(new EventCard(resources.getString(info.getNameRes()), chance, monsters.get(0), monsters.get(1), monsters.get(2), monsters.get(3), monsters.get(4)));
+            if (chance>0) {
+
+                if (!hide_iceborne || !info.isIceborne()) {
+                    if (!hide_optional || !info.isOptional())
+                        eventCardsList.add(new EventCard(resources.getString(info.getNameRes()), chance, monsters.get(0), monsters.get(1), monsters.get(2), monsters.get(3), monsters.get(4)));
+                }
+            }
         }
         Collections.sort(eventCardsList);
     }
