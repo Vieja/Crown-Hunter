@@ -75,10 +75,10 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.View
             EventCard card = eventList.get(position);
             name.setText(card.getName());
             monster_icon1.setImageResource(card.getMonsterIcon1());
-            if (card.getMonsterIcon2() != 0) monster_icon2.setImageResource(card.getMonsterIcon2());
-            if (card.getMonsterIcon3() != 0) monster_icon3.setImageResource(card.getMonsterIcon3());
-            if (card.getMonsterIcon4() != 0) monster_icon4.setImageResource(card.getMonsterIcon4());
-            if (card.getMonsterIcon5() != 0) monster_icon5.setImageResource(card.getMonsterIcon5());
+            monster_icon2.setImageResource(card.getMonsterIcon2());
+            monster_icon3.setImageResource(card.getMonsterIcon3());
+            monster_icon4.setImageResource(card.getMonsterIcon4());
+            monster_icon5.setImageResource(card.getMonsterIcon5());
             chances.setText(context.getResources().getString(R.string.chances)+' '+card.getChances()+'%');
         }
     }
