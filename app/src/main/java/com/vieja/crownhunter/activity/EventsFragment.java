@@ -1,6 +1,8 @@
 package com.vieja.crownhunter.activity;
 
+import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -25,8 +27,8 @@ import com.vieja.crownhunter.MonsterDatabase;
 import com.vieja.crownhunter.R;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
+import java.util.Locale;
 
 public class EventsFragment extends Fragment {
 
@@ -57,7 +59,10 @@ public class EventsFragment extends Fragment {
         boolean hide_iceborne = prefs.getBoolean("hide_iceborne", false);
         boolean hide_optional = prefs.getBoolean("hide_optional", false);
 
-        Resources resources = getContext().getResources();
+        Resources resources;
+        if (prefs.getBoolean("names_english", false)) {
+            resources = getLocalizedResources(getContext(), new Locale("en"));
+        } else resources = getContext().getResources();
 
         StringBuilder sb = FileIO.load(getContext());
         String[] lines = sb.toString().split("\n");
@@ -78,7 +83,7 @@ public class EventsFragment extends Fragment {
 
                 if (!hide_iceborne || !info.isIceborne()) {
                     if (!hide_optional || !info.isOptional())
-                        eventCardsList.add(new EventCard(resources.getString(info.getNameRes()), chance, monsters.get(0), monsters.get(1), monsters.get(2), monsters.get(3), monsters.get(4)));
+                        eventCardsList.add(new EventCard(resources.getString(info.getNameRes()), chance, info.getStars(), monsters.get(0), monsters.get(1), monsters.get(2), monsters.get(3), monsters.get(4)));
                 }
             }
         }
@@ -103,5 +108,14 @@ public class EventsFragment extends Fragment {
             }
         }
         return 0;
+    }
+
+    @NonNull
+    private Resources getLocalizedResources(Context context, Locale desiredLocale) {
+        Configuration conf = context.getResources().getConfiguration();
+        conf = new Configuration(conf);
+        conf.setLocale(desiredLocale);
+        Context localizedContext = context.createConfigurationContext(conf);
+        return localizedContext.getResources();
     }
 }

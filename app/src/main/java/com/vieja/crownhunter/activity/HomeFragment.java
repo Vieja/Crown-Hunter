@@ -1,6 +1,8 @@
 package com.vieja.crownhunter.activity;
 
+import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,7 +13,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.preference.PreferenceManager;
 
@@ -27,6 +28,7 @@ import com.vieja.crownhunter.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Locale;
 
 public class HomeFragment extends Fragment {
 
@@ -105,7 +107,10 @@ public class HomeFragment extends Fragment {
         boolean hide_iceborne = prefs.getBoolean("hide_iceborne", false);
         boolean hide_optional = prefs.getBoolean("hide_optional", false);
 
-        Resources resources = getContext().getResources();
+        Resources resources;
+        if (prefs.getBoolean("names_english", false)) {
+            resources = getLocalizedResources(getContext(), new Locale("en"));
+        } else resources = getContext().getResources();
 
         StringBuilder sb = FileIO.load(getContext());
         String[] lines = sb.toString().split("\n");
@@ -126,7 +131,7 @@ public class HomeFragment extends Fragment {
         for (EventInfo info: EventDatabase.list){
             ArrayList<Integer> monsters = info.getFiveMostersRes();
             int chance = getOverallChanceForCrown(info.getCrownChances());
-            if (chance>0) eventCardsList.add(new EventCard(resources.getString(info.getNameRes()), chance, monsters.get(0), monsters.get(1), monsters.get(2), monsters.get(3), monsters.get(4)));
+            if (chance>0) eventCardsList.add(new EventCard(resources.getString(info.getNameRes()), chance, info.getStars(), monsters.get(0), monsters.get(1), monsters.get(2), monsters.get(3), monsters.get(4)));
         }
         Collections.sort(eventCardsList);
     }
@@ -149,5 +154,14 @@ public class HomeFragment extends Fragment {
             }
         }
         return 0;
+    }
+
+    @NonNull
+    private Resources getLocalizedResources(Context context, Locale desiredLocale) {
+        Configuration conf = context.getResources().getConfiguration();
+        conf = new Configuration(conf);
+        conf.setLocale(desiredLocale);
+        Context localizedContext = context.createConfigurationContext(conf);
+        return localizedContext.getResources();
     }
 }

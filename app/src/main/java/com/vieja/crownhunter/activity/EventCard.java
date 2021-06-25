@@ -3,15 +3,17 @@ package com.vieja.crownhunter.activity;
 public class EventCard implements Comparable{
     private final String name;
     private int chances;
+    private final int stars;
     private final int monsterIcon1;
     private final int monsterIcon2;
     private final int monsterIcon3;
     private final int monsterIcon4;
     private final int monsterIcon5;
 
-    public EventCard(String name, int chances, int monsterIcon1, int monsterIcon2, int monsterIcon3, int monsterIcon4, int monsterIcon5) {
+    public EventCard(String name, int chances, int stars, int monsterIcon1, int monsterIcon2, int monsterIcon3, int monsterIcon4, int monsterIcon5) {
         this.name = name;
         this.chances = chances;
+        this.stars = stars;
         this.monsterIcon1 = monsterIcon1;
         this.monsterIcon2 = monsterIcon2;
         this.monsterIcon3 = monsterIcon3;
@@ -25,10 +27,6 @@ public class EventCard implements Comparable{
 
     public int getChances() {
         return chances;
-    }
-
-    public void setChances(int chances) {
-        this.chances = chances;
     }
 
     public int getMonsterIcon1() {
@@ -53,6 +51,8 @@ public class EventCard implements Comparable{
 
     @Override
     public int compareTo(Object o) {
-        return ((EventCard)o).chances-this.chances;
+        if (((EventCard)o).chances == this.chances)
+            return (this.stars - ((EventCard)o).stars);
+        else return ((EventCard)o).chances-this.chances;
     }
 }
