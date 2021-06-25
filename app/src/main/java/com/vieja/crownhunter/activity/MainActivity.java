@@ -17,6 +17,7 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.vieja.crownhunter.MonsterDatabase;
+import com.vieja.crownhunter.EventDatabase;
 import com.vieja.crownhunter.R;
 
 
@@ -42,10 +43,9 @@ public class MainActivity extends AppCompatActivity
         adContainerView.addView(adView);
         loadBanner();
 
-
         MonsterDatabase.populateMonsterDatabase();
+        EventDatabase.populateEventDatabase();
         loadFragment(new HomeFragment());
-
     }
 
     private boolean loadFragment(Fragment fragment) {
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity
                 fragment = new MonstersFragment();
                 break;
             case R.id.navigation_events:
-                fragment = new EventsFragment(adSize);
+                fragment = new EventsFragment();
                 break;
         }
         return loadFragment(fragment);

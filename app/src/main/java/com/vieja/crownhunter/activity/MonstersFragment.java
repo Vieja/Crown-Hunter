@@ -32,7 +32,7 @@ public class MonstersFragment extends Fragment {
     private RecyclerView.Adapter adapter;
 
     private SharedPreferences prefs;
-    private ArrayList<MonsterCard> monsterCardsList = new ArrayList<>();
+    private final ArrayList<MonsterCard> monsterCardsList = new ArrayList<>();
 
     @Nullable
     @Override

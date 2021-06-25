@@ -1,0 +1,355 @@
+{
+  "events": [
+    {
+      "stars": 3,
+      "name": "USJ: Gold Star Treatment",
+      "crowns": [
+        {
+          "monster_name": "Great Jagras",
+          "crown": "mini",
+          "chance": 100
+        },
+        {
+          "monster_name": "Great Jagras",
+          "crown": "giant",
+          "chance": 100
+        }
+      ]
+    },
+
+    {
+      "stars": 7,
+      "name": "A Rush of Blood",
+      "crowns": [
+        {
+          "monster_name": "Odogaron",
+          "crown": "mini",
+          "chance": 100
+        }
+      ]
+    },
+
+    {
+      "stars": 7,
+      "name": "USJ: Blazing Azure Stars!",
+      "crowns": [
+        {
+          "monster_name": "Azure Rathalos",
+          "crown": "mini",
+          "chance": 100
+        },
+        {
+          "monster_name": "Dodogama",
+          "crown": "giant",
+          "chance": 100
+        }
+      ]
+    },
+
+    {
+      "stars": 6,
+      "name": "Egg Lovers United",
+      "crowns": [
+        {
+          "monster_name": "Kulu-Ya-Ku",
+          "crown": "giant",
+          "chance": 100
+        }
+      ]
+    },
+
+    {
+      "stars": 7,
+      "name": "Deep Green Blues",
+      "crowns": [
+        {
+          "monster_name": "Anjanath",
+          "crown": "giant",
+          "chance": 20
+        },
+
+        {
+          "monster_name": "Great Jagras",
+          "crown": "giant",
+          "chance": 20
+        },
+
+        {
+          "monster_name": "Pukei-Pukei",
+          "crown": "giant",
+          "chance": 20
+        },
+
+        {
+          "monster_name": "Rathalos",
+          "crown": "giant",
+          "chance": 20
+        },
+
+        {
+          "monster_name": "Tobi-Kadachi",
+          "crown": "giant",
+          "chance": 20
+        },
+
+        {
+          "monster_name": "Anjanath",
+          "crown": "mini",
+          "chance": 20
+        },
+
+        {
+          "monster_name": "Great Jagras",
+          "crown": "mini",
+          "chance": 20
+        },
+
+        {
+          "monster_name": "Pukei-Pukei",
+          "crown": "mini",
+          "chance": 20
+        },
+
+        {
+          "monster_name": "Rathalos",
+          "crown": "mini",
+          "chance": 20
+        },
+
+        {
+          "monster_name": "Tobi-Kadachi",
+          "crown": "mini",
+          "chance": 20
+        }
+      ]
+    },
+
+    {
+      "stars": 7,
+      "name": "Wildspire Bolero",
+      "crowns": [
+        {
+          "monster_name": "Diablos",
+          "crown": "giant",
+          "chance": 20
+        },
+
+        {
+          "monster_name": "Barroth",
+          "crown": "giant",
+          "chance": 20
+        },
+
+        {
+          "monster_name": "Jyuratodus",
+          "crown": "giant",
+          "chance": 20
+        },
+
+        {
+          "monster_name": "Kulu-Ya-Ku",
+          "crown": "giant",
+          "chance": 20
+        },
+
+        {
+          "monster_name": "Rathian",
+          "crown": "giant",
+          "chance": 20
+        },
+
+        {
+          "monster_name": "Diablos",
+          "crown": "mini",
+          "chance": 20
+        },
+
+        {
+          "monster_name": "Barroth",
+          "crown": "mini",
+          "chance": 20
+        },
+
+        {
+          "monster_name": "Jyuratodus",
+          "crown": "mini",
+          "chance": 20
+        },
+
+        {
+          "monster_name": "Kulu-Ya-Ku",
+          "crown": "mini",
+          "chance": 20
+        },
+
+        {
+          "monster_name": "Rathian",
+          "crown": "mini",
+          "chance": 20
+        }
+      ]
+    },
+
+    {
+      "stars": 7,
+      "name": "Coral Waltz",
+      "crowns": [
+        {
+          "monster_name": "Legiana",
+          "crown": "giant",
+          "chance": 25
+        },
+
+        {
+          "monster_name": "Paolumu",
+          "crown": "giant",
+          "chance": 25
+        },
+
+        {
+          "monster_name": "Pink Rathian",
+          "crown": "giant",
+          "chance": 25
+        },
+
+        {
+          "monster_name": "Tzitzi-Ya-Ku",
+          "crown": "giant",
+          "chance": 25
+        },
+
+        {
+          "monster_name": "Legiana",
+          "crown": "mini",
+          "chance": 25
+        },
+
+        {
+          "monster_name": "Paolumu",
+          "crown": "mini",
+          "chance": 25
+        },
+
+        {
+          "monster_name": "Pink Rathian",
+          "crown": "mini",
+          "chance": 25
+        },
+
+        {
+          "monster_name": "Tzitzi-Ya-Ku",
+          "crown": "mini",
+          "chance": 25
+        }
+      ]
+    },
+
+    {
+      "stars": 7,
+      "name": "Effluvial Opera",
+      "crowns": [
+        {
+          "monster_name": "Bazelgeuse",
+          "crown": "giant",
+          "chance": 25
+        },
+
+        {
+          "monster_name": "Great Girros",
+          "crown": "giant",
+          "chance": 25
+        },
+
+        {
+          "monster_name": "Odogaron",
+          "crown": "giant",
+          "chance": 25
+        },
+
+        {
+          "monster_name": "Radobaan",
+          "crown": "giant",
+          "chance": 25
+        },
+
+        {
+          "monster_name": "Bazelgeuse",
+          "crown": "mini",
+          "chance": 25
+        },
+
+        {
+          "monster_name": "Great Girros",
+          "crown": "mini",
+          "chance": 25
+        },
+
+        {
+          "monster_name": "Odogaron",
+          "crown": "mini",
+          "chance": 25
+        },
+
+        {
+          "monster_name": "Radobaan",
+          "crown": "mini",
+          "chance": 25
+        }
+      ]
+    },
+
+    {
+      "stars": 7,
+      "name": "Rock N' Roll Recess",
+      "crowns": [
+        {
+          "monster_name": "Azure Rathalos",
+          "crown": "giant",
+          "chance": 25
+        },
+
+        {
+          "monster_name": "Dodogama",
+          "crown": "giant",
+          "chance": 25
+        },
+
+        {
+          "monster_name": "Lavasioth",
+          "crown": "giant",
+          "chance": 25
+        },
+
+        {
+          "monster_name": "Uragaan",
+          "crown": "giant",
+          "chance": 25
+        },
+
+        {
+          "monster_name": "Azure Rathalos",
+          "crown": "mini",
+          "chance": 25
+        },
+
+        {
+          "monster_name": "Dodogama",
+          "crown": "mini",
+          "chance": 25
+        },
+
+        {
+          "monster_name": "Lavasioth",
+          "crown": "mini",
+          "chance": 25
+        },
+
+        {
+          "monster_name": "Uragaan",
+          "crown": "mini",
+          "chance": 25
+        }
+      ]
+    }
+  ]
+}

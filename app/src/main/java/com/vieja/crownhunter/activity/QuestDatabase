@@ -1,0 +1,28 @@
+{
+  "quests": [
+    {
+      "stars": 3,
+      "name": "Down the Dark, Muddy Path",
+      "crowns": [
+        {
+          "monster_name": "Barroth",
+          "crown": "giant",
+          "chance": 100
+        }
+      ]
+    },
+
+    {
+      "stars": 8,
+      "name": "The Blazing Sun",
+      "crowns": [
+        {
+          "monster_name": "Teostra",
+          "crown": "giant",
+          "chance": 100
+        }
+      ]
+    }
+
+  ]
+}
