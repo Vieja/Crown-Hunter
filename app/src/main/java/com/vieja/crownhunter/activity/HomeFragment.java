@@ -83,22 +83,23 @@ public class HomeFragment extends Fragment {
         ice_giant_1.setText(String.valueOf(giant_ice));
 
         populateEventCardList();
-        EventCard event = eventCardsList.get(0);
-        TextView name = view.findViewById(R.id.name);
-        ImageView img1 = view.findViewById(R.id.monster_icon1);
-        ImageView img2 = view.findViewById(R.id.monster_icon2);
-        ImageView img3 = view.findViewById(R.id.monster_icon3);
-        ImageView img4 = view.findViewById(R.id.monster_icon4);
-        ImageView img5 = view.findViewById(R.id.monster_icon5);
-        TextView chances = view.findViewById(R.id.chances);
-        name.setText(event.getName());
-        img1.setImageResource(event.getMonsterIcon1());
-        if (event.getMonsterIcon2() != 0) img2.setImageResource(event.getMonsterIcon2());
-        if (event.getMonsterIcon3() != 0) img3.setImageResource(event.getMonsterIcon3());
-        if (event.getMonsterIcon4() != 0) img4.setImageResource(event.getMonsterIcon4());
-        if (event.getMonsterIcon5() != 0) img5.setImageResource(event.getMonsterIcon5());
-        chances.setText(getContext().getResources().getString(R.string.chances)+' '+event.getChances()+'%');
-
+        if (eventCardsList.size() != 0) {
+            EventCard event = eventCardsList.get(0);
+            TextView name = view.findViewById(R.id.name);
+            ImageView img1 = view.findViewById(R.id.monster_icon1);
+            ImageView img2 = view.findViewById(R.id.monster_icon2);
+            ImageView img3 = view.findViewById(R.id.monster_icon3);
+            ImageView img4 = view.findViewById(R.id.monster_icon4);
+            ImageView img5 = view.findViewById(R.id.monster_icon5);
+            TextView chances = view.findViewById(R.id.chances);
+            name.setText(event.getName());
+            img1.setImageResource(event.getMonsterIcon1());
+            if (event.getMonsterIcon2() != 0) img2.setImageResource(event.getMonsterIcon2());
+            if (event.getMonsterIcon3() != 0) img3.setImageResource(event.getMonsterIcon3());
+            if (event.getMonsterIcon4() != 0) img4.setImageResource(event.getMonsterIcon4());
+            if (event.getMonsterIcon5() != 0) img5.setImageResource(event.getMonsterIcon5());
+            chances.setText(getContext().getResources().getString(R.string.chances) + ' ' + event.getChances() + '%');
+        }
         return view;
 
     }
